@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Idade</title>
+</head>
+
+<body onload="verificar()">
+    <style>
+        body {
+            background-color: rgb(108, 108, 222);
+            font-family: sans-serif;
+        }
+
+        h4 {
+            color: #fff;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        p {
+            margin: 10px 15px 10px 0;
+            font-weight: bold;
+        }
+
+        .box {
+            width: 350px;
+            height: 350px;
+            border-radius: 5px;
+            margin: auto;
+            background-color: #fff;
+            padding: 10px;
+        }
+
+        .box>div {
+            display: flex;
+        }
+
+        .box .input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-right: 10px;
+        }
+
+        input[type="checkbox"] {
+            margin: 0;
+        }
+    </style>
+
+    <div class="container">
+        <h4>Verificador de Idade</h4>
+        <div class="box">
+            <div class="input-wrapper">
+                <label>Ano de Nascimento</label>
+                <input id="ano" type="number" />
+            </div>
+            <div>
+                <p>Sexo</p>
+                <div class="input-wrapper">
+                    <input type="checkbox" value="Masculino">
+                    <label>Masculino</label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="checkbox" value="Feminino">
+                    <label>Feminino</label>
+                </div>
+            </div>
+
+            <button id="verificar" onclick="verificar()">Verificar</button>
+
+            <div class="resultado">
+                <p></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function verificar() {
+            var ano = document.getElementById("ano").value
+
+            alert(ano)
+        }
+
+
+    </script>
+</body>
+
+</html>

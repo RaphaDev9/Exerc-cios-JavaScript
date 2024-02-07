@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data e Hora</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            height: 100%;
+        }
+
+        .container {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #5d5d5d;
+            height: 100%;
+            display: grid;
+        }
+
+        .container>h3 {
+            color: #fff;
+        }
+    </style>
+
+    <div class="container">
+        <h3 id="data">Data: <p></p></h3>
+        <h3 id="hora">Hora: <p></p></h3>
+    </div>
+    <script>
+        function atualizarData() {
+            let data = new Date
+            let dia = data.getDate().toString()
+            let mes = (data.getMonth() + 1).toString()  
+            let ano = data.getFullYear()
+            let hora = data.getHours().toString()
+            let minuto = data.getMinutes().toString()
+            let segundo = data.getSeconds().toString()
+            hora = `${hora}:${minuto}:${segundo}`
+            data = `${dia}/${mes}/${ano}`
+            let div_data = document.querySelector("#data>p")
+            div_data.innerText = data
+            let div_hora = window.document.querySelector("#hora>p")
+            div_hora.innerText = hora
+
+            setTimeout(atualizarData, 100)
+        }
+
+        atualizarData();
+    </script>
+</body>
+
+</html>
